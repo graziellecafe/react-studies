@@ -99,3 +99,46 @@ Há algumas pastas e arquivos chaves para o desenvolvimento em React:
 - Podemos criar funções que retornam JSX 
 - Isso serve para criar situações que dependam de outras condições 
 - Ou seja, o JSX a ser renderizado pode variar por alguma variável, por exemplo 
+
+## Seção 3 - Avançando em React 
+### Hooks
+
+- Recursos do React que tem diversas funções;
+- Como: guardar e alterar o estado de algum dado na nossa aplicação;
+- Todos os hooks começam com use, por exemplo: `useState``;
+- Podemos criar os nossos hooks, isto é chamado de custom hook; 
+- Os hooks precisam ser importados;
+- Geralmente são úteis em todas as aplicações, utilizaremos diversos ao longo do curso; 
+
+#### Hooks mais importantes 
+- useState
+- useEffect
+- useRef
+- useReducer
+- useContext
+- useMemo 
+- useCallback
+- useLayoutEffect
+
+#### useState
+```javascript
+import { useState } from 'react'; 
+import './App.css';
+
+function App() {
+const [ count, setCount ] = useState(0); 
+
+const incrementValue = () => {
+  setCount((prevState) => prevState + 1); 
+}
+
+  return (
+    <div className="App">
+      <h1>{count}</h1>
+      <button onClick={incrementValue}>Increment value!</button>
+    </div>
+  );
+}
+
+export default App;
+```

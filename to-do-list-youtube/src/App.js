@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import "./App.css";
+import Tasks from './components/Tasks'; 
 
 function App() {
   // lista de vários objetos 
@@ -13,13 +14,14 @@ function App() {
       id: '2', 
       title: 'Ler livros',
       completed: true, 
-    }
+    },
   ])
 
   return (
     <>
-      <div className="container"></div>
-
+      <div className="container">
+        <Tasks tasks={tasks} />
+      </div>
     </>
   );
 }

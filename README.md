@@ -101,11 +101,15 @@ Há algumas pastas e arquivos chaves para o desenvolvimento em React:
 - Ou seja, o JSX a ser renderizado pode variar por alguma variável, por exemplo 
 
 ## Seção 3 - Avançando em React 
-### Hooks
+### Imagens em asset
+- A pasta public pode ser utilizada para colocar imagens
+- Mas um padrão bem utilizada para as imagens dos projetos é colocar em uma pasta chamada `assets`, em src 
+- Em assets precisamos importar as imagens, e o src é dinâmico com o nome de importação 
 
+### Hooks
 - Recursos do React que tem diversas funções;
 - Como: guardar e alterar o estado de algum dado na nossa aplicação;
-- Todos os hooks começam com use, por exemplo: `useState``;
+- Todos os hooks começam com use, por exemplo: `useState` (guarda e altera estado);
 - Podemos criar os nossos hooks, isto é chamado de custom hook; 
 - Os hooks precisam ser importados;
 - Geralmente são úteis em todas as aplicações, utilizaremos diversos ao longo do curso; 
@@ -121,6 +125,10 @@ Há algumas pastas e arquivos chaves para o desenvolvimento em React:
 - useLayoutEffect
 
 #### useState
+- O hook de `useState` é um dos mais utilizados 
+- Utilizamos para gerenciar o estado de algum dado, variáveis não funcionam corretamente, o componente não renderiza 
+- Para guardar o dado definimos o nome da variável e para alterar vamos utilizar setNome, onde nome é o nome do nosso dado 
+
 ```javascript
 import { useState } from 'react'; 
 import './App.css';
@@ -142,3 +150,16 @@ const incrementValue = () => {
 
 export default App;
 ```
+
+### Renderização de listas
+- Uma outra ação bem comum é **renderizar listas** de dados no template
+- Fazemos isso com os dados do tipo **array**
+- Utilizando o método map para nos auxiliar 
+- Além dos dados podemos inserir JSX em cada iteração 
+
+### A propriedade key 
+- Iterar listas sem a propriedade key nos gera um warning, podemos verificar isso no console
+- O React precisa de uma chave única em cada um dos itens iterados
+- Isso serve para ajudá-lo na renderização do componente
+- Geralmente teremos um array de objetos e podemos colocar key como uma chave única, como o id de algum dado 
+- Em último caso devemos utilizar o index do método map 
